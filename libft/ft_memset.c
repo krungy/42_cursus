@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sojilee <sojilee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/08 17:19:25 by sojilee           #+#    #+#             */
-/*   Updated: 2022/07/13 17:59:52 by sojilee          ###   ########.fr       */
+/*   Created: 2022/07/11 20:28:16 by sojilee           #+#    #+#             */
+/*   Updated: 2022/07/13 18:39:31 by sojilee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "libft.h"
+
+void	*ft_memset(void *b, int c, size_t len)
 {
-	int	ans;
+	size_t	i;
+	unsigned char	*res;
 
-	ans = 0;
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		ans = 1;
+	res = (unsigned char *)b;
+	i = 0;
 
-	return ans;
+	while (i < len)
+	{
+		res[i] = (unsigned int)c;
+		i++;
+	}
+	return (res);
 }

@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sojilee <sojilee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/08 17:19:25 by sojilee           #+#    #+#             */
-/*   Updated: 2022/07/13 17:59:52 by sojilee          ###   ########.fr       */
+/*   Created: 2022/07/13 16:18:39 by sojilee           #+#    #+#             */
+/*   Updated: 2022/07/13 19:04:06 by sojilee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "libft.h"
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	ans;
+	size_t i;
+	unsigned char	*copydst;
+	unsigned char	*copysrc;
 
-	ans = 0;
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		ans = 1;
+	i = 0;
+	copydst = (unsigned char *)s1;
+	copysrc = (unsigned char *)s2;
 
-	return ans;
+	while (i < n)
+	{
+		if (copydst[i] != copysrc[i])
+			return (copydst[i] - copysrc[i]);
+		i++;
+	}
+	return (0);
 }
