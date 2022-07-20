@@ -6,7 +6,7 @@
 /*   By: sojilee <sojilee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 19:17:52 by sojilee           #+#    #+#             */
-/*   Updated: 2022/07/11 19:30:24 by sojilee          ###   ########.fr       */
+/*   Updated: 2022/07/20 16:09:57 by sojilee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strchr(const char *s, int c)
 	{
 		if (*s == c)
 		{
-			return (*s);
+			return ((char *)s);
 		}
 		s++;
 	}

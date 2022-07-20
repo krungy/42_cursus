@@ -6,24 +6,23 @@
 /*   By: sojilee <sojilee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 15:48:36 by sojilee           #+#    #+#             */
-/*   Updated: 2022/07/13 17:59:45 by sojilee          ###   ########.fr       */
+/*   Updated: 2022/07/20 16:07:14 by sojilee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void bzero(void *b, size_t n)
+void bzero(void *s, size_t n)
 {
 	size_t	i;
 	unsigned char	*res;
 
 	i = 0;
-	res = (unsigned char *)b;
+	res = (unsigned char *)s;
 
 	while (i < n)
 	{
 		res[i] = 0;
 		i++;
 	}
-	return (res);
 }
