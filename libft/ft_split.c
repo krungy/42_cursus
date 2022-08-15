@@ -1,18 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sojilee <sojilee@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/15 16:33:38 by sojilee           #+#    #+#             */
+/*   Updated: 2022/08/15 16:59:48 by sojilee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static char ft_free(char **str)
+static char	**ft_free(char **str)
 {
-  int i;
+	int	i;
 
-  i = 0;
-  while (str[i] != '\0')
-  {
-    free(str[i]);
-    i++;
-  }
-  free(str);
-  return (NULL);
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+	return (NULL);
 }
+
 static int	ft_sep(char *charset, char c)
 {
 	int	i;
@@ -71,21 +84,21 @@ char	**ft_split(char *s, char *c)
 	char	**ans;
 
 	alength = ft_arr_count(s, c);
-	if (!(ans = (char **)malloc(sizeof(char *) * (alength + 1))))
+	ans = (char **)malloc(sizeof(char *) * (alength + 1));
+	if (!ans)
 		return (NULL);
-	i = 0;
+	i = -1;
 	k = 0;
 	start = 0;
-	while (s[i] != '\0')
+	while (++i < alength)
 	{
-    if(s[i] == '\0')
-      return (ft_free(s));
+		if (s[i] == '\0')
+			return (ft_free(ans));
 		if (ft_sep(c, s[i]))
 			start = i + 1;
 		else if (!ft_sep(c, s[i]) && (ft_sep(c, s[i + 1])
 				|| s[i + 1] == '\0'))
 			ans[k++] = ft_putstr(s, i - start + 1, start);
-		i++;
 	}
 	ans[k] = 0;
 	return (ans);

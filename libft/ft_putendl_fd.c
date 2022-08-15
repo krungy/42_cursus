@@ -6,19 +6,19 @@
 /*   By: sojilee <sojilee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 19:35:21 by sojilee           #+#    #+#             */
-/*   Updated: 2022/07/20 19:50:49 by sojilee          ###   ########.fr       */
+/*   Updated: 2022/08/15 16:33:21 by sojilee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h";
+#include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 
 	i = 0;
 	if (!s)
 		return ;
-	ft_putstr_fd(s[i], fd);
-	ft_putchar_fd("\n", fd);
+	ft_putstr_fd(s, fd);
+	write(fd, "\n", 1);
 }

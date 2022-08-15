@@ -6,11 +6,11 @@
 /*   By: sojilee <sojilee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 18:49:58 by sojilee           #+#    #+#             */
-/*   Updated: 2022/07/11 18:51:31 by sojilee          ###   ########.fr       */
+/*   Updated: 2022/08/15 17:02:14 by sojilee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);

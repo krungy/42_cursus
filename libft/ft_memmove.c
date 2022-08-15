@@ -6,7 +6,7 @@
 /*   By: sojilee <sojilee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:15:07 by sojilee           #+#    #+#             */
-/*   Updated: 2022/07/20 16:13:19 by sojilee          ###   ########.fr       */
+/*   Updated: 2022/08/15 17:18:22 by sojilee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,16 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char	*resdst;
 	unsigned char	*copysrc;
 
-	i = 0;
-	resdst = (unsigned char *)dst;
-	copysrc = (unsigned char *)src;
-
 	if (len == 0 || dst == src)
 		return (dst);
+	i = -1;
+	resdst = (unsigned char *)dst;
+	copysrc = (unsigned char *)src;
 	if (dst < src)
-		while (i < len)
-		{
+		while (++i < len)
 			resdst[i] = copysrc[i];
-			i++;
-		}
 	else
-		while (i < len)
-		{
+		while (++i < len)
 			resdst[len - i - 1] = copysrc[len - i - 1];
-			i++;
-		}
 	return (dst);
 }

@@ -6,11 +6,13 @@
 /*   By: sojilee <sojilee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 19:38:13 by sojilee           #+#    #+#             */
-/*   Updated: 2022/07/20 19:41:58 by sojilee          ###   ########.fr       */
+/*   Updated: 2022/08/15 16:33:16 by sojilee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putchar_fd(char c, int fd)
+#include "libft.h"
+
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }

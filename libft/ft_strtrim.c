@@ -10,48 +10,48 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// 수정 필요
-#include "libft.h"
-static int	ft_start(char const *str, char find)
-{
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] == find)
-		{
-			return (i);
-		}
-		i++;
-	}
-	return (-1);
-}
-
-static int	ft_end(char const *str, char find)
-{
-	int i;
-
-	i = ft_strlen(str) - 1;
-	while (str[i] != '\0')
-	{
-		if (str[i] == find)
-		{
-			return (i);
-		}
-		i--;
-	}
-	return (-1);
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	char	*res;
-	size_t	start;
-	size_t	end;
-
-	start = 0;
-	end = ft_strlen(s1) - 1;
-	// while ()
-	// res = (char *)malloc(sizeof(char) * )
-}
+//// 수정 필요
+//#include "libft.h"
+//static int	ft_start(char const *str, char find)
+//{
+//	int i;
+//
+//	i = 0;
+//	while (str[i] != '\0')
+//	{
+//		if (str[i] == find)
+//		{
+//			return (i);
+//		}
+//		i++;
+//	}
+//	return (-1);
+//}
+//
+//static int	ft_end(char const *str, char find)
+//{
+//	int i;
+//
+//	i = ft_strlen(str) - 1;
+//	while (str[i] != '\0')
+//	{
+//		if (str[i] == find)
+//		{
+//			return (i);
+//		}
+//		i--;
+//	}
+//	return (-1);
+//}
+//
+//char	*ft_strtrim(char const *s1, char const *set)
+//{
+//	char	*res;
+//	size_t	start;
+//	size_t	end;
+//
+//	start = 0;
+//	end = ft_strlen(s1) - 1;
+//	// while ()
+//	// res = (char *)malloc(sizeof(char) * )
+//}

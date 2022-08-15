@@ -6,7 +6,7 @@
 /*   By: sojilee <sojilee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 19:29:52 by sojilee           #+#    #+#             */
-/*   Updated: 2022/07/20 16:14:19 by sojilee          ###   ########.fr       */
+/*   Updated: 2022/08/15 17:31:36 by sojilee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	length;
+	unsigned char	to_find;
+	size_t			length;
 
+	to_find = (unsigned char)c;
 	length = ft_strlen(s);
-
-	while (length >= 0)
+	while (length > 0)
 	{
-		if (s[length] == c)
+		if (s[length] == to_find)
 			return ((char *)s + length);
 		length--;
 	}
-
+	if (s[length] == to_find)
+		return ((char *)s + length);
 	return (0);
 }
