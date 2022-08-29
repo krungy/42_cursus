@@ -6,7 +6,7 @@
 /*   By: sojilee <sojilee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 14:23:44 by sojilee           #+#    #+#             */
-/*   Updated: 2022/08/15 16:16:10 by sojilee          ###   ########.fr       */
+/*   Updated: 2022/08/29 20:18:25 by sojilee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_nbrlen(int n)
 	}
 	else if (n == 0)
 		return (1);
-	while (n >= 0)
+	while (n > 0)
 	{
 		len++;
 		n /= 10;

@@ -6,7 +6,7 @@
 /*   By: sojilee <sojilee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 15:58:33 by sojilee           #+#    #+#             */
-/*   Updated: 2022/08/15 16:39:33 by sojilee          ###   ########.fr       */
+/*   Updated: 2022/08/29 20:44:41 by sojilee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	resdst = (unsigned char *)dst;
 	copysrc = (unsigned char *)src;
 	i = 0;
-	if (!resdst)
-		return (0);
 	if (n == 0 || resdst == copysrc)
 		return (resdst);
 	while (i < n)
