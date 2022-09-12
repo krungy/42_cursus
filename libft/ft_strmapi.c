@@ -6,7 +6,7 @@
 /*   By: sojilee <sojilee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 20:05:08 by sojilee           #+#    #+#             */
-/*   Updated: 2022/07/20 20:13:35 by sojilee          ###   ########.fr       */
+/*   Updated: 2022/09/12 14:49:46 by sojilee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*res;
 
 	i = 0;
+	if (!s && f == 0)
+		return (NULL);
 	res = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!res)
 		return (NULL);

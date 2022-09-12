@@ -6,7 +6,7 @@
 /*   By: sojilee <sojilee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:33:38 by sojilee           #+#    #+#             */
-/*   Updated: 2022/09/08 16:53:45 by sojilee          ###   ########.fr       */
+/*   Updated: 2022/09/12 14:48:15 by sojilee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	ft_arr_count(char *str, char c)
 	return (cnt);
 }
 
-static char	*ft_split_word(char *s, int length)
+static char	*ft_split_word(const char *s, int length)
 {
 	int		i;
 	char	*ans;
@@ -60,7 +60,7 @@ static char	*ft_split_word(char *s, int length)
 		i++;
 	}
 	ans[i] = '\0';
-	return (ans);
+	return ((char *)ans);
 }
 
 char	**ft_split(char *s, char c)
