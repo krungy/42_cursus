@@ -6,13 +6,12 @@
 /*   By: sojilee <sojilee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:56:15 by sojilee           #+#    #+#             */
-/*   Updated: 2022/07/20 17:13:47 by sojilee          ###   ########.fr       */
+/*   Updated: 2022/09/12 14:25:21 by sojilee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// 수정필요
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*res;

@@ -6,7 +6,7 @@
 /*   By: sojilee <sojilee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 16:23:26 by sojilee           #+#    #+#             */
-/*   Updated: 2022/09/08 16:03:27 by sojilee          ###   ########.fr       */
+/*   Updated: 2022/09/12 14:32:08 by sojilee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new;
 
 	node = NULL;
+	if (lst == 0 && f == 0)
+		return (0);
 	while (lst)
 	{
 		new = ft_lstnew(f(lst->content));

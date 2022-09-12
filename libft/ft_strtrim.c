@@ -6,11 +6,10 @@
 /*   By: sojilee <sojilee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 17:14:09 by sojilee           #+#    #+#             */
-/*   Updated: 2022/09/08 15:44:58 by sojilee          ###   ########.fr       */
+/*   Updated: 2022/09/12 14:25:54 by sojilee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// 수정 필요
 #include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
