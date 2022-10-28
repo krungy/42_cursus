@@ -2,20 +2,20 @@
 
 int	ft_parse(const char *format, va_list ap)
 {
-	if (format == 'c')
-		return (va_arg(ap, int));
+	if (format == '%')
+		return (write(1, '%', 1));
+	else if (format == 'c')
+		return (ft_print_char(va_arg(ap, int)));
 	else if (format == 's')
-		return (va_arg(ap, char *));
-	else if (format == 'p')
-		return (va_arg(ap, unsigned long long));
+		return (ft_print_string(va_arg(ap, char *)));
 	else if (format == 'd' || format == 'i')
 		return (va_arg(ap, int));
+	else if (format == 'p')
+		return (va_arg(ap, unsigned long long));
 	else if (format == 'u')
 		return (va_arg(ap, unsigned int));
 	else if (format == 'x' || format == 'X')
 		return (va_arg(ap, unsigned int));
-	else if (format == '%')
-		return (write(1, '%', 1));
 	else
 		return (-1);
 }
