@@ -1,8 +1,23 @@
 #include "ft_printf.h"
 
-// 수정필요
-int	ft_print_number(int nbr)
+int ft_convert_int(int nbr) 
 {
+	int		len;
+	char	c;
+
+	len = 0;
+	if (nbr >= 10)
+		len += ft_convert_int(nbr / 10);
+	c = nbr % 10 + '0';
+	len += write(1, &c, 1);
+	return (len);
+}
+
+int	ft_print_int(int nbr)
+{
+	int len;
+
+	len = 0;
 	if (nbr == -2147483648)
 	{
 		write(1, "-2147483648", 11);
@@ -10,17 +25,21 @@ int	ft_print_number(int nbr)
 	}
 	else if (nbr < 0)
 	{
-		ft_putchar('-');
+		len += write(1, "-", 1);
 		nbr *= -1;
-		ft_putnbr(nbr);
 	}
-	else if (nbr >= 10)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
-	else
-	{
-		ft_putchar('0' + nbr);
-	}	
+	return (ft_convert_int(nbr) + len);
+}
+
+int	ft_print_unsigned_int(unsigned int nbr)
+{
+	unsigned int	len;
+	char			c;
+
+	len = 0;
+	if (nbr >= 10)
+		len += ft_print_unsigned_int(nbr / 10);
+	c = nbr % 10 + '0';
+	len += write(1, &c, 1);
+	return (len);
 }
