@@ -48,12 +48,22 @@ BONUS =	ft_lstnew.c			\
 
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(BONUS:.c=.o)
+
+ifdef BONUS_FLAG
+	ALLOBJ = $(OBJS) $(OBJS_BONUS)
+else
+	ALLOBJ = $(OBJS)
+endif
+
 NAME = libft.a
 
 all : $(NAME)
 
-$(NAME): $(OBJS)
-				ar rcs $(NAME) $(OBJS)
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@ -I libft.h
+
+$(NAME): $(ALLOBJ)
+				ar rcs $@ $(ALLOBJ)
 
 clean :
 				rm -f $(OBJS) $(OBJS_BONUS)
@@ -63,7 +73,10 @@ fclean : clean
 
 re : fclean all
 
-bonus : $(OBJS) $(OBJS_BONUS)
-				ar rcs $(NAME) $(OBJS) $(OBJS_BONUS)
+# bonus : $(OBJS) $(OBJS_BONUS)
+# 				ar rcs $(NAME) $(OBJS) $(OBJS_BONUS)
+
+bonus :
+				make BONUS_FLAG=1 all
 
 .PHONY: all clean fclean re bonus

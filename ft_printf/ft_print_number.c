@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_number.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sojilee <sojilee@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/11 13:51:53 by sojilee           #+#    #+#             */
+/*   Updated: 2022/11/11 13:52:07 by sojilee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int ft_convert_int(int nbr) 
+int	ft_convert_int(int nbr)
 {
 	int		len;
 	char	c;
@@ -13,11 +25,13 @@ int ft_convert_int(int nbr)
 	return (len);
 }
 
-int	ft_print_int(int nbr)
+int	ft_print_int(va_list ap)
 {
-	int len;
+	int	len;
+	int	nbr;
 
 	len = 0;
+	nbr = va_arg(ap, int);
 	if (nbr == -2147483648)
 	{
 		write(1, "-2147483648", 11);
