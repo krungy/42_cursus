@@ -6,9 +6,9 @@
 
 int	ft_printf(const char *format, ...);
 int	ft_print_start(const char *format, va_list ap);
-int	ft_parse(const char format, va_list ap);
+int	ft_parse(const char *format, va_list ap);
 int	ft_print_char(char c);
-int	ft_putchar(char c);
+int	ft_putchar(va_list ap);
 int	ft_print_string(char *str);
 int	ft_strlen(char *str);
 int	ft_print_int(int nbr);

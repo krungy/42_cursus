@@ -1,52 +1,49 @@
 #include "ft_printf.h"
 
-int	ft_parse(const char format, va_list ap)
+int	ft_parse(const char *format, va_list ap)
 {
 	int	len;
 
 	len = 0;
-	if (format == '%')
+	if (*format == '%')
 		len += write(1, "%", 1);
-	else if (format == 'c')
-		len += ft_putchar(va_arg(ap, int));
-	else if (format == 's')
+	else if (*format == 'c')
+		// len += ft_putchar(va_arg(ap, int));
+		len += ft_putchar(ap);
+	else if (*format == 's')
 		len += ft_print_string(va_arg(ap, char *));
-	else if (format == 'd' || format == 'i')
+	else if (*format == 'd' || *format == 'i')
 		len += ft_print_int(va_arg(ap, int));
-	else if (format == 'p')
+	else if (*format == 'p')
 		len += ft_print_addr(va_arg(ap, unsigned long long));
-	else if (format == 'u')
+	else if (*format == 'u')
 		len += ft_print_unsigned_int(va_arg(ap, unsigned int));
-	else if (format == 'x' || format == 'X')
-		len += ft_print_hex(va_arg(ap, unsigned int), format);
-	else 
-		return (-1);
+	else if (*format == 'x' || *format == 'X')
+		len += ft_print_hex(va_arg(ap, unsigned int), *format);
+	// else 
+	// 	return (-1);
 	return (len);
 }
 
 int	ft_print_start(const char *format, va_list ap)
 {
-	int i;
 	int	res;
-	int	temp;
 
-	i = 0;
 	res = 0;
-	while (format[i])
+	while (*format)
 	{
-		if (format[i] == '%')
+		if (*format == '%')
 		{
-			i++;
-			if (format[i] == 0)
+			format++;
+			if (*format == 0)
 				break;
-			temp = ft_parse((const char)format[i], ap);
+			res += ft_parse(format, ap);
 		}
 		else
-			temp = ft_print_char(format[i]);
-		if (temp < 0)
-			return (-1);
-		res += temp;
-		i++;
+			res += ft_print_char(*format);
+		format++;
+		// if (res < 0)
+		// 	return (-1);
 	}
 	return res;
 }
